@@ -1,0 +1,61 @@
+<% layout("/layout/boilerplate.ejs") %>
+    <div class="col-md-6">
+        <div class="form-section login-form">
+
+            <form action="/signup" id="signupForm" method="post" autocomplete="off" class="needs-validation" novalidate >
+                <h1>Signup Form</h1>
+
+                <div class="form-group-signup" style="margin-top: 20px;">
+                    <i class="fa-solid fa-envelope" style="font-size: 20px;margin-right: 10px;"></i>
+                    <input type="email" name="email" placeholder="Email" required  />
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter a valid Email Id.</div>
+                </div>
+                <div class="form-group-signup">
+                    <i class="fa-solid fa-user" style="font-size: 20px;margin-right: 10px;"></i>
+                    <input style="background-color: white;" type="text" name="username" id="username" placeholder="Username" required />
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please choose a valid username.</div>
+                </div>
+                <div class="form-group-signup">
+                    <i class="fa-solid fa-lock" style="font-size: 20px;margin-right: 10px;"></i>
+                    <input type="password" placeholder="Password" name="password" id="pass"
+                        onkeyup="checkStrengthAndValidate()"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,15}$" required />
+                    <span class="eye" onclick="hideShowPass()">
+                        <i class="fa-solid fa-eye " id="hide1" style="display: none; bottom:-5px; position: fixed;"></i>
+                        <i class="fa-solid fa-eye-slash" id="hide2" style=" position: fixed; bottom: -5px;"></i>
+                    </span>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter a valid password.</div>
+                </div>
+                <div id="strength">Password is <span id="strength-text"></span></div>
+                <div class="password-check">
+                    <p>Password must contain:</p>
+                    <ul class="rules">
+                        <li>
+                            <i class="fa-solid fa-circle"></i>
+                            <span>At least 8 characters length</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle"></i>
+                            <span>At least 1 number (0..9)</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle"></i>
+                            <span>At least 1 lowercase letter (a..z)</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle"></i>
+                            <span>At least 1 special symbol (!..$)</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle"></i>
+                            <span>At least 1 uppercase letter (A..Z)</span>
+                        </li>
+                    </ul>
+                </div>
+                <button type="submit" style="border-radius: 10px;">Submit</button>
+            </form>
+        </div>
+    </div>

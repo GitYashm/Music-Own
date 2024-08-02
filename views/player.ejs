@@ -1,0 +1,302 @@
+<% layout("/layout/boilerplate.ejs") %>
+    
+<% let m1 = Math.floor(Math.random()*60)+1;%>
+<% let m2 = Math.floor(Math.random()*60)+1;%>
+<% let m3 = Math.floor(Math.random()*60)+1;%>
+<% let m4 = Math.floor(Math.random()*60)+1;%>
+<% let m5 = Math.floor(Math.random()*60)+1;%>
+<% let m6 = Math.floor(Math.random()*60)+1;%>
+<% let m7 = Math.floor(Math.random()*60)+1;%>
+<% let m8 = Math.floor(Math.random()*60)+1;%>
+<% let m9 = Math.floor(Math.random()*60)+1;%>
+<% let m10 = Math.floor(Math.random()*60)+1;%>
+<% let m11 = Math.floor(Math.random()*60)+1;%>
+<% let m12 = Math.floor(Math.random()*60)+1;%>
+<% let m13 = Math.floor(Math.random()*60)+1;%>
+<% let m14 = Math.floor(Math.random()*60)+1;%>
+<% let m15 = Math.floor(Math.random()*60)+1;%>
+<% let m16= Math.floor(Math.random()*60)+1;%>
+<% let m17= Math.floor(Math.random()*60)+1;%>
+<% let m18= Math.floor(Math.random()*60)+1;%>
+<% let m19= Math.floor(Math.random()*60)+1;%>
+<% let m20= Math.floor(Math.random()*60)+1;%>
+<% let m21= Math.floor(Math.random()*60)+1;%>
+<% let m22 = Math.floor(Math.random()*60)+1;%>
+<% let m23 = Math.floor(Math.random()*60)+1;%>
+<% let m24 = Math.floor(Math.random()*60)+1;%>
+<% let m25 = Math.floor(Math.random()*60)+1;%>
+<% let m26 = Math.floor(Math.random()*60)+1;%>
+    <div class="top-header">
+        <div class="image-search">
+        <%  let iURL = playItem.spotifyTrack.album.cover[0].url; 
+            let iAudioUrl = playItem.youtubeVideo.audio[0].url; 
+            let iartistUrl = playItem.youtubeVideo.title;
+            let isingerUrl = playItem.youtubeVideo.channel.name;
+        %> 
+            <div class="check"  data-song-url="<%=iAudioUrl%>" 
+                data-image-url="<%=iURL%>"  onclick="playSong(this)">
+                <img src="<%=iURL%>" style="display: flex; flex-wrap: wrap; justify-content: center;" alt="" />
+                <i class="bi bi-play-circle-fill play-circle bi-pause-circle-fill" id="4t" style=" color: #00ff7f"></i>
+                <p><%=iartistUrl%></p>
+            </div> 
+           
+        <!-- <div class="check" >
+            <img src="/image/Music-icon.jpg" alt="" />
+            
+     <p>jhgakdghajgdjagda mcvm,jHHJKABJDBAavmcnvac <span>havb ahciua</span></p> -->
+            
+        <!-- ?/div>  -->
+            
+            
+        </div>
+        <div class="searchbar">
+            <form action="/home/player" class="search">
+                <div class="searchelement">
+                    <div class="iconandsearch">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input id="music-search" class="song-list" type="text" placeholder="Search Your Music"
+                            name="search" />
+                        <i onclick="voice()" class="fa-solid fa-microphone" id="mic"></i>
+                        </div>
+                        
+                        <button class="btn" id="btn_submit">Search</button>
+                        </div>
+                        <button class="btn btn-success btn-responsive" id="btn_submit-1">Search</button>
+                    </form>
+                <h4>Trending Song</h4>
+                <div class="images-4">
+
+                <div class="card" id="mydiv" data-song-url="/Audio/song-<%=m26%>.mp3"
+                    data-image-url="/image/image-<%=m26%>.jpg" onclick="playSong(this)" onclick="changeImage(this)"
+                    style="width: 15rem; background-color: transparent; border: none">
+                    <img class="card-img-top" src="/image/image-<%=m26%>.jpg" alt="Card image cap" />
+                    <i class="bi bi-play-circle-fill play-circle bi-pause-circle-fill" id="4t"
+                        style="position: absolute; right: 13%; bottom: -8px; font-size: 37px; cursor: pointer; color: #00ff7f"></i>
+                </div>
+                <div class="card" data-image-url="/image/image-<%=m25%>.jpg" data-song-url="/Audio/song-<%=m25%>.mp3"
+                    onclick="playSong(this)" onclick="changeImage(this)"
+                    style="width: 15rem; background-color: transparent; border: none">
+                    <img class="card-img-top" src="/image/image-<%=m25%>.jpg" alt="Card image cap" />
+                    <i class="bi bi-play-circle-fill play-circle bi-pause-circle-fill" id="3t"
+                        style="position: absolute; right: 13%; bottom: -8px; font-size: 37px; cursor: pointer; color: #00ff7f"></i>
+                </div>
+                <div class="card" data-image-url="/image/image-<%=m24%>.jpg" data-song-url="/Audio/song-<%=m24%>.mp3"
+                    onclick="playSong(this)" onclick="changeImage(this)" id="song-detail"
+                    style="width: 15rem; background-color: transparent; border: none">
+                    <div class="images">
+                        <img class="card-img-top" src="/image/image-<%=m24%>.jpg" alt="Card image cap" />
+                    </div>
+
+                    <i class="bi bi-play-circle-fill play-circle bi-pause-circle-fill" id="2t"
+                        style="position: absolute; right: 13%; bottom: -8px; font-size: 37px; cursor: pointer; color: #00ff7f"></i>
+                </div>
+                <div class="card" data-image-url="/image/image-<%=m23%>.jpg" data-song-url="/Audio/song-<%=m23%>.mp3"
+                    onclick="playSong(this)" style="width: 15rem; background-color: transparent; border: none">
+                    <img class="card-img-top" src="/image/image-<%=m23%>.jpg" alt="Card image cap" />
+                    <i class="bi bi-play-circle-fill play-circle bi-pause-circle-fill" id="1t"
+                        style="position: absolute; right: 13%; bottom: -8px; font-size: 37px; cursor: pointer; color: #00ff7f"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <div class="side-section">
+
+
+            <h4>Weekly Top 10</h4>
+            <ul>
+                <div class="li-div" id="top10" data-image-url="/image/image-1.jpg"
+                    data-song-url="/Audio/song-1.mp3" onclick="playSong(this)"
+                    >
+                    <img src="/image/image-1.jpg" alt="Card image cap" />
+                    <p class="side-song-name">Sajni<span>Arijit Singh</span></p>
+
+                </div>
+                <div class="li-div" id="top10" data-image-url="/image/image-2.jpg"
+                    data-song-url="/Audio/song-2.mp3" onclick="playSong(this)"
+                    >
+                    <img src="/image/image-2.jpg" alt="Card image cap"  />
+                    <p class="side-song-name">O maahi<span>Arijit Singh</span></p>
+
+                </div>
+                <div class="li-div" id="top10" data-image-url="/image/image-3.jpg"
+                    data-song-url="/Audio/song-3.mp3" onclick="playSong(this)"
+                   >
+                    <img src="/image/image-3.jpg" alt="Card image cap" />
+                    <p class="side-song-name">Dekha Tenu<span>Mohammad Faiz</span></p>
+
+                </div>
+
+                <div class="li-div" id="top10" data-image-url="/image/image-4.jpg"
+                    data-song-url="/Audio/song-4.mp3" onclick="playSong(this)">
+                    <img src="/image/image-4.jpg" alt="Card image cap"  />
+                    <p class="side-song-name">Soulmate<span>Badshah, Arijit Singh</span></p>
+
+                </div>
+                <div class="li-div" id="top10" data-image-url="/image/image-5.jpg"
+                    data-song-url="/Audio/song-5.mp3" onclick="playSong(this)">
+                    <img src="/image/image-5.jpg" alt="Card image cap" />
+                    <p class="side-song-name">Yimmy Yimmy<span>Tayc, Shreya Ghoshal</span></p>
+
+                </div>
+                <div class="li-div" id="top10" data-image-url="/image/image-6.jpg"
+                    data-song-url="/Audio/song-6.mp3" onclick="playSong(this)">
+                    <img src="/image/image-6.jpg" alt="Card image cap"  />
+                    <p class="side-song-name">Teri Baaton Mein<span>Raghav, Asees Kaur</span></p>
+
+                </div>
+                <div class="li-div" id="top10" data-image-url="/image/image-7.jpg"
+                    data-song-url="/Audio/song-7.mp3" onclick="playSong(this)">
+                    <img src="/image/image-7.jpg" alt="Card image cap"  />
+                    <p class="side-song-name">Akhiyaan Gulaab<span>Mitraz</span></p>
+
+                </div>
+                <div class="li-div" id="top10" data-image-url="/image/image-8.jpg"
+                    data-song-url="/Audio/song-8.mp3" onclick="playSong(this)">
+                    <img src="/image/image-8.jpg" alt="Card image cap"  />
+                    <p class="side-song-name">Jiya Laage Na<span>Shilpa Rao, Mohit Chauhan</span></p>
+
+                </div>
+                <div class="li-div" id="top10" data-image-url="/image/image-13.jpg"
+                    data-song-url="/Audio/song-13.mp3" onclick="playSong(this)">
+                    <img src="/image/image-13.jpg" alt="Card image cap"  />
+                    <p class="side-song-name">Husn<span>Anuv Jain</span></p>
+
+                </div>
+
+            </ul>
+        </div>
+        <div class="main-section">
+            <div class="main-section-heading">
+                <h4>Popular Songs</h4>
+                <button class="btn"><a href="/home/more">More</a></button>
+            </div>
+
+            <div class="main-section-songs">
+                <div class="card" data-image-url="/image/image-<%=m1%>.jpg" data-song-url="/Audio/song-<%=m1%>.mp3"
+                    onclick="playSong(this)" style=" border: none;">
+                    <img class="card-img-top main-image" src="/image/image-<%=m1%>.jpg" alt="Card image cap"
+                        style="border-radius: 10px;">
+                    <i class="bi bi-play-circle-fill play-circle play-circle-main"
+                        style="position: absolute; right:8%; bottom: 5px;font-size: 37px; cursor: pointer; color: #00ff7f;"
+                        id="1m"></i>
+                </div>
+                <div class="card" data-image-url="/image/image-<%=m2%>.jpg" data-song-url="/Audio/song-<%=m2%>.mp3"
+                    onclick="playSong(this)" style=" border: none;">
+                    <img class="card-img-top main-image" src="/image/image-<%=m2%>.jpg" alt="Card image cap"
+                        style="border-radius: 10px;">
+                    <i class="bi bi-play-circle-fill play-circle play-circle-main"
+                        style="position: absolute; right:8%; bottom: 5px;font-size: 37px; cursor: pointer; color: #00ff7f;"
+                        id="1m"></i>
+                </div>
+                <div class="card" data-image-url="/image/image-<%=m3%>.jpg" data-song-url="/Audio/song-<%=m3%>.mp3"
+                    onclick="playSong(this)" style=" border: none;">
+                    <img class="card-img-top main-image" src="/image/image-<%=m3%>.jpg" alt="Card image cap"
+                        style="border-radius: 10px;">
+                    <i class="bi bi-play-circle-fill play-circle play-circle-main"
+                        style="position: absolute; right:8%; bottom: 5px;font-size: 37px; cursor: pointer; color: #00ff7f;"
+                        id="1m"></i>
+                </div>
+                <div class="card" data-image-url="/image/image-<%=m4%>.jpg" data-song-url="/Audio/song-<%=m4%>.mp3"
+                    onclick="playSong(this)" style=" border: none;">
+                    <img class="card-img-top main-image" src="/image/image-<%=m4%>.jpg" alt="Card image cap"
+                        style="border-radius: 10px;">
+                    <i class="bi bi-play-circle-fill play-circle play-circle-main"
+                        style="position: absolute; right:8%; bottom: 5px;font-size: 37px; cursor: pointer;color: #00ff7f;"
+                        id="1m"></i>
+                </div>
+
+                <div class="card" data-image-url="/image/image-<%=m5%>.jpg" data-song-url="/Audio/song-<%=m5%>.mp3"
+                    onclick="playSong(this)" style=" border: none; margin-top: 10px;">
+                    <img class="card-img-top main-image" src="/image/image-<%=m5%>.jpg" alt="Card image cap"
+                        style="border-radius: 10px;">
+                    <i class="bi bi-play-circle-fill play-circle play-circle-main"
+                        style="position: absolute; right:8%; bottom: 5px;font-size: 37px; cursor: pointer; color: #00ff7f;"
+                        id="1m"></i>
+                </div>
+                <div class="card" data-image-url="/image/image-<%=m6%>.jpg" data-song-url="/Audio/song-<%=m6%>.mp3"
+                    onclick="playSong(this)" style=" border: none;margin-top: 10px;">
+                    <img class="card-img-top main-image" src="/image/image-<%=m6%>.jpg" alt="Card image cap"
+                        style="border-radius: 10px;">
+                    <i class="bi bi-play-circle-fill play-circle play-circle-main"
+                        style="position: absolute; right:8%; bottom: 5px;font-size: 37px; cursor: pointer; color: #00ff7f;"
+                        id="1m"></i>
+                </div>
+                <div class="card" data-image-url="/image/image-<%=m7%>.jpg" data-song-url="/Audio/song-<%=m7%>.mp3"
+                    onclick="playSong(this)" style=" border: none;margin-top: 10px;">
+                    <img class="card-img-top main-image" src="/image/image-<%=m7%>.jpg" alt="Card image cap"
+                        style="border-radius: 10px;">
+                    <i class="bi bi-play-circle-fill play-circle play-circle-main"
+                        style="position: absolute; right:8%; bottom: 5px;font-size: 37px; cursor: pointer; color: #00ff7f;"
+                        id="1m"></i>
+                </div>
+                <div class="card" data-image-url="/image/image-<%=m8%>.jpg" data-song-url="/Audio/song-<%=m8%>.mp3"
+                    onclick="playSong(this)" style=" border: none;margin-top: 10px;">
+                    <img class="card-img-top main-image" src="/image/image-<%=m8%>.jpg" alt="Card image cap"
+                        style="border-radius: 10px;">
+                    <i class="bi bi-play-circle-fill play-circle play-circle-main"
+                        style="position: absolute; right:8%; bottom: 5px;font-size: 37px; cursor: pointer; color: #00ff7f;"
+                        id="1m">
+                    </i>
+                </div>
+                <div class="card" data-image-url="/image/image-<%=m9%>.jpg" data-song-url="/Audio/song-<%=m9%>.mp3"
+                    onclick="playSong(this)" style=" border: none;margin-top: 10px;">
+                    
+                <img class="card-img-top main-image" src="/image/image-<%=m9%>.jpg" alt="Card image cap"
+                        style="border-radius: 10px;">
+                    <i class="bi bi-play-circle-fill play-circle play-circle-main"
+                        style="position: absolute; right:8%; bottom: 5px;font-size: 37px; cursor: pointer; color: #00ff7f;"
+                        id="1m"></i>
+                </div>
+                <div class="card" data-image-url="/image/image-<%=m10%>.jpg" data-song-url="/Audio/song-<%=m10%>.mp3"
+                    onclick="playSong(this)" style=" border: none;margin-top: 10px;">
+                    <img class="card-img-top main-image" src="/image/image-<%=m10%>.jpg" alt="Card image cap"
+                        style="border-radius: 10px;">
+                    <i class="bi bi-play-circle-fill play-circle play-circle-main"
+                        style="position: absolute; right:8%; bottom: 5px;font-size: 37px; cursor: pointer; color: #00ff7f;"
+                        id="1m"></i>
+                </div>
+                <div class="card" data-image-url="/image/image-<%=m11%>.jpg" data-song-url="/Audio/song-<%=m11%>.mp3"
+                    onclick="playSong(this)" style=" border: none;margin-top: 10px;">
+                    <img class="card-img-top main-image" src="/image/image-<%=m11%>.jpg" alt="Card image cap"
+                        style="border-radius: 10px;">
+                    <i class="bi bi-play-circle-fill play-circle play-circle-main"
+                        style="position: absolute; right:8%; bottom: 5px;font-size: 37px; cursor: pointer; color: #00ff7f;"
+                        id="1m"></i>
+                </div>
+                <div class="card" data-image-url="/image/image-<%=m12%>.jpg" data-song-url="/Audio/song-<%=m12%>.mp3"
+                    onclick="playSong(this)" style=" border: none;margin-top: 10px;">
+                    <img class="card-img-top main-image" src="/image/image-<%=m12%>.jpg" alt="Card image cap"
+                        style="border-radius: 10px;">
+                    <i class="bi bi-play-circle-fill play-circle play-circle-main"
+                        style="position: absolute; right:8%; bottom: 5px;font-size: 37px; cursor: pointer; color: #00ff7f;"
+                        id="1m"></i>
+                </div>
+
+
+
+            </div>
+
+            <!-- <audio id = "audioPlayer" controls src="/Audio/song-.mp3" style="z-index: 2; width: 65vw;position: relative; transform: translate(-60px,60px);" id="audioTag">
+            </audio> -->
+
+
+        </div>
+    </div>
+    <div class="player-footer" >
+        <div class="player-footer-img">
+            <div class="image">
+                <img id="SongImage" src="/image/image-7.jpg">
+            </div>
+            <div class="audio">
+                <audio loop controls src="/Audio/Ambarsariya.mp3"
+                     id="audioPlayer">
+                </audio>
+            </div>
+        </div>
+
+
+
+    </div>
+    </div>

@@ -1,0 +1,63 @@
+<% layout("/layout/boilerplate.ejs") %>
+
+
+    <form action="/home/contact" method="GET">
+        <div class="contact">
+            <div class="contact-yash">
+                <div class="yash-loaction">
+                    <div class="yash-location-icon">
+                        <i class="bi bi-geo-alt-fill"></i>
+                    </div>
+                    <div class="yash-address-location">
+                        <span>Address</span>
+                        <ul >
+                            <li>2/42 <br> Begum Bagh,Aligarh</li>
+                            <li>Sector 34, Noida</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="phone">
+                    <div class="yash-phone">
+                        <div class="yash-phone-icon">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+                        <div class="yash-phone-phone">
+                            <span>Phone</span>
+                            <ul>
+                                <li>7302099889</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-email">
+                    <div class="yash-email">
+                        <div class="yash-email-icon">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+                        <div class="yash-email-email">
+                            <span>Email</span>
+                            <ul>
+                                <li>yash571w1@gmail.com</li>
+                                <li>ym.mishra.9889@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </form>
+    <div class="contact-ritika">
+        <form action="/home/contact" method="POST" class="contact-form" id="contact-form">
+            <h2>Send <span>Message</span></h2>
+            <br>
+            <input type="text" name="Listing[name]" placeholder="Your Name" name="name">
+            <br>
+            <input type="text" name="Listing[email]" placeholder="Your Email" name="email">
+            <br>
+            <textarea name="Listing[message]" placeholder="Type your message" name="message" style="height: 20vh; padding: 10px;"></textarea>
+            <br>
+            <%-include('./includes/flash.ejs') %> 
+            <button type="submit" id="contact-btn" class="btn btn-success">Send</button>
+        </form>
+
+    </div>
+    

@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"></a>
+    <img src="/image/1711409163-MusicOwn-removebg-preview.png" alt="">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" ></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" aria-current="page" href="/home">Home</a>
+        <a class="nav-link" href="/home/about">About</a>
+        <a class="nav-link" href="/home/contact">Contact</a>
+
+      </div>
+      
+      <% if(!currUser){%>
+        <form method="GET" action="/login">
+          <button class="btn btn-success">Login</button>
+        </form>
+        <%}%>
+      <% if(currUser){%>
+            <form method="GET" action="/logout">
+              <button class="btn btn-success">logout</button>
+            </form>
+            <%}%>
+
+
+    </div>
+  </div>
+</nav>
