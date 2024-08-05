@@ -93,19 +93,16 @@ var options = {
     method: 'GET',
     url: 'https://spotify-scraper.p.rapidapi.com/v1/track/download',
 
-<<<<<<< HEAD
     // headers: {
 	// 	'x-rapidapi-key': '3286a6cf9dmsh80f3a0faa61ef82p1f5748jsna61d5973a71d',
 	// 	'x-rapidapi-host': 'spotify-scraper.p.rapidapi.com'
-	// }
-    headers: {
-=======
+	// 
  //    headers: {
 	// 	'x-rapidapi-key': '3286a6cf9dmsh80f3a0faa61ef82p1f5748jsna61d5973a71d',
 	// 	'x-rapidapi-host': 'spotify-scraper.p.rapidapi.com'
 	// }
 	headers: {
->>>>>>> 172783af85703504c8beed8933f0841607a0a1a9
+
 		'x-rapidapi-key': '9ecc63482cmsh79fdbcc4e31a22dp12d90bjsnecbc5789de4a',
 		'x-rapidapi-host': 'spotify-scraper.p.rapidapi.com'
 	}
@@ -113,7 +110,7 @@ var options = {
 app.use(express.json());
 app.use('/', userRoutes);
 
-app.get("/home", (req, res) => {
+app.get("/", (req, res) => {
     res.render("home.ejs");
 })
 app.get("/login", (req, res) => {
@@ -123,7 +120,7 @@ app.get("/login", (req, res) => {
 // app.get("/home/player",(req,res)=>{
 //     res.render("player.ejs");
 // })
-app.get("/home/player", async (req, res) => {
+app.get("/player", async (req, res) => {
     try {
         let { search } = req.query;
         if (search == null) {
@@ -146,50 +143,49 @@ app.get("/home/player", async (req, res) => {
     }
 })
 
-app.get("/home/about", (req, res) => {
+app.get("/about", (req, res) => {
     res.render("About.ejs");
 })
 app.get("/signup", (req, res) => {
     res.render("/users/Signup.ejs");
 })
-app.get("/home/contact", (req, res) => {
+app.get("/contact", (req, res) => {
     res.render("contact.ejs");
 })
-app.get("/home/main/db", (req, res) => {
+app.get("/main/db", (req, res) => {
     res.render("db.ejs");
 })
 app.get("/login",(req,res)=>{
     res.render("login.ejs");
 })
-app.get("/home/more",(req,res)=>{
+app.get("/more",(req,res)=>{
     res.render("more.ejs");
 })
-app.get("/home/confirmation", (req,res)=>{
+app.get("/confirmation", (req,res)=>{
      res.render("confirmation.ejs");
 })
-app.get("/home/contact/message",async (req,res)=>{
+app.get("/contact/message",async (req,res)=>{
     let alldata = await Listing.find();
     
     res.render("message.ejs",{alldata});
     // untill you do not render the allListings data will not be printed
  })
 
-app.post("/home/contact",async(req,res)=>{
+app.post("/contact",async(req,res)=>{
     let {id} = req.params;
     const newListings = new Listing(req.body.Listing); 
     await newListings.save();
     res.redirect("/home/contact");
 
 })
-app.get("/home/contact/message",(req,res)=>{
+app.get("/contact/message",(req,res)=>{
     res.render("message.ejs");
 })
 
-
-app.delete("/home/contact/message/:id",async(req,res)=>{
+app.delete("/message/:id",async(req,res)=>{
     let {id} = req.params;
     const deleteListings = await Listing.findByIdAndDelete(id);
-    res.redirect("/home/contact/message");
+    res.redirect("/contact/message");
 })
 
 // app.get("/home/contact/message/:id",(req,res)=>{
@@ -202,8 +198,7 @@ app.delete("/home/contact/message/:id",async(req,res)=>{
 // app.delete("/home/contact/message/:id",(req,res)=>{
 //     let {id} = req.params;
 //     post = messages.filter((p)=> id !== p.id);
-// })
-
+// }) 
 
   
 
